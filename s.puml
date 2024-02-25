@@ -1,0 +1,29 @@
+@startuml
+class com.directi.training.srp.exercise.BestCar {
++ Car getBestCar(List<Car>)
+}
+class com.directi.training.srp.exercise.CarDAO {
+- List<Car> _carsDb
++ List<Car> getCarsDB()
++ Car getCarById(String)
+}
+class com.directi.training.srp.exercise.Car {
+- String _id
+- String _model
+- String _brand
++ String getId()
++ String getModel()
++ String getBrand()
+}
+class com.directi.training.srp.exercise.CarNames {
++ String getCarsNames(List<Car>)
+}
+class com.directi.training.srp.exercise.CarManager {
+- CarDAO carDAO
+- CarNames carNames
+- BestCar bestCar
++ Car getFromDb(String)
++ String getCarsNames()
++ Car getBestCar()
+}
+@enduml

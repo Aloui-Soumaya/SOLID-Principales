@@ -1,0 +1,26 @@
+@startuml
+class com.directi.training.ocp.exercise.ResourceAllocator {
+- {static} int INVALID_RESOURCE_ID
++ int allocate(Resource)
++ void free(Resource,int)
+}
+class com.directi.training.ocp.exercise.TimeSlot {
++ int findFree()
++ void markBusy(int)
++ void markFree(int)
+}
+abstract class com.directi.training.ocp.exercise.Resource {
++ {abstract}int findFree()
++ {abstract}void markBusy(int)
++ {abstract}void markFree(int)
+}
+class com.directi.training.ocp.exercise.SpaceSlot {
++ int findFree()
++ void markBusy(int)
++ void markFree(int)
+}
+
+
+com.directi.training.ocp.exercise.Resource <|-- com.directi.training.ocp.exercise.TimeSlot
+com.directi.training.ocp.exercise.Resource <|-- com.directi.training.ocp.exercise.SpaceSlot
+@enduml
